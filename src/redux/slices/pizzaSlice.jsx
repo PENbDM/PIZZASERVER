@@ -5,7 +5,7 @@ export const fetchPizzas = createAsyncThunk(
   "pizza/fetchPizzasStatus",
   async (params) => {
     const { categoryId, sortType, currentPage } = params;
-    const { data } = await axios.get("http://localhost:4444/categorysort", {
+    const { data } = await axios.get("/api/categorysort", {
       params: {
         category: categoryId,
         sortBy: sortType,

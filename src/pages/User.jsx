@@ -12,7 +12,7 @@ const User = () => {
   React.useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data } = await axios.get(`http://localhost:4444/user?id=${id}`);
+        const { data } = await axios.get(`/api/user?id=${id}`);
         await setUserData(data);
 
         const dataOrder = await dispatch(fetchOrderToUser(id));
