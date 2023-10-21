@@ -4,7 +4,7 @@ module.exports = function (app) {
   app.use(
     "/api",
     createProxyMiddleware({
-      target: "https://mern-pizza-app-api.onrender.com",
+      target: "http://localhost:4444",
       changeOrigin: true,
     })
   );

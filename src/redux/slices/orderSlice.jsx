@@ -6,7 +6,7 @@ export const fetchOrder = createAsyncThunk(
   "order/fetchOrder",
   async (params) => {
     const { items, totalPrice, user } = params;
-    const { data } = await axios.post(`${URL}/api/order`, {
+    const { data } = await axios.post("/api/order", {
       pizzas: items,
       totalPrice: totalPrice,
       user: user,
@@ -18,7 +18,7 @@ export const fetchOrder = createAsyncThunk(
 export const fetchOrderToUser = createAsyncThunk(
   "order/fetchOrderToUser",
   async (params) => {
-    const { data } = await axios.get(`${URL}/api/getorder?_id=${params}`);
+    const { data } = await axios.get(`/api/getorder?_id=${params}`);
 
     return data;
   }
