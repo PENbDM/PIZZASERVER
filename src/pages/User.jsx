@@ -4,7 +4,6 @@ import { fetchOrderToUser } from "../redux/slices/orderSlice";
 import { useDispatch } from "react-redux";
 import logout from "../redux/slices/authSlice";
 import { Navigate } from "react-router-dom";
-import URL from "../App";
 const User = () => {
   const dispatch = useDispatch();
   const id = window.localStorage.getItem("id");
@@ -13,7 +12,7 @@ const User = () => {
   React.useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data } = await axios.get(`${URL}/api/user?id=${id}`);
+        const { data } = await axios.get(`/api/user?id=${id}`);
         await setUserData(data);
 
         const dataOrder = await dispatch(fetchOrderToUser(id));
