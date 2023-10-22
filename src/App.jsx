@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import FullPizza from "./pages/FullPizza";
 import Sign from "./components/Sign";
 import User from "./pages/User";
+export const URL = "ss";
 
 function App() {
   return (

@@ -1,11 +1,11 @@
 import axios from "axios";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-
+import URL from "../../App";
 export const fetchPizzas = createAsyncThunk(
   "pizza/fetchPizzasStatus",
   async (params) => {
     const { categoryId, sortType, currentPage } = params;
-    const { data } = await axios.get("/api/categorysort", {
+    const { data } = await axios.get(`${URL}/api/categorysort`, {
       params: {
         category: categoryId,
         sortBy: sortType,

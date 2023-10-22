@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { useSelector } from "react-redux";
-
+import URL from "../App";
 export const FullPizza = () => {
   const [pizza, setPizza] = React.useState({
     imageUrl: "",
@@ -13,9 +13,7 @@ export const FullPizza = () => {
   React.useEffect(() => {
     async function fetchPizza() {
       try {
-        const { data } = await axios.get(
-          `http://localhost:4444/getpizza/${_id}`
-        );
+        const { data } = await axios.get(`${URL}/api/getpizza/${_id}`);
         setPizza(data);
       } catch (error) {
         alert("Error");

@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { addItem } from "../../redux/slices/cartSlice";
 import { useNavigate } from "react-router-dom";
 import { setId } from "../../redux/slices/pizzaSlice";
-
 const PizzaBlock = ({ _id, title, price, imageUrl, sizes, types }) => {
   const dispatch = useDispatch();
   const cartItem = useSelector((state) =>
