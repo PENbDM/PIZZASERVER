@@ -18,7 +18,7 @@ export const fetchOrderToUser = createAsyncThunk(
   "order/fetchOrderToUser",
   async (params) => {
     const { data } = await axios.get(
-      `http://localhost:4444/getorder?_id=${params}`
+      `${URL}/getorder?_id=${params}`
     );
 
     return data;
